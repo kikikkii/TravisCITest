@@ -1,5 +1,4 @@
 from django.db import models
-from .Airplane import *
 
 class Tickets(models.Model):
     departureDate = models.DateTimeField(auto_now=False,null=True)
