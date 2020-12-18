@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from . import models, sendMessage
-from . import ticketSerializer, airplaneSerializer
+from . import ticketSerializer
 from django.core import serializers
 from rest_framework.views import APIView
 from django.http import HttpResponse, JsonResponse
@@ -128,18 +128,6 @@ class NormalResearch(APIView):
             serializer.save()
             return HttpResponse("OK")
 
-class updateTicket(APIView):
-    def post(self,request):
-        print("this is update")
-        dict = request.data
-        #确定机票的航线没有重复
-        ddata = dict.get('ddate') #出发日期
-        dcityName = dict.get('dcityName') #出发城市
-        acityName = dict.get('acityName') #到达城市
-        if airplaneSerializer.airplaneSerializer.is_valid(dict):
-            serializer = airplaneSerializer.airplaneSerializer(data=dict)
-        serializer.save()
-        print('保存成功')
 
 class getcities(APIView):
     def get(self,request):

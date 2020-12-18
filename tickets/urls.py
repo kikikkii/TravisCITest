@@ -28,7 +28,6 @@ urlpatterns = [
     url(r'login/', Login.as_view()),
     url(r'concernList/',concernList.as_view()),
     url(r'normalResearch/', views.NormalResearch.as_view()),
-    url(r'update/',views.updateTicket.as_view()),
     url(r'getcities/',views.getcities.as_view()),
     url(r'companyTickets',views.companyTickets.as_view())
 ]
