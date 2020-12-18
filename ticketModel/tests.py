@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Tickets
+from ticketModel.models import Tickets
 from django.test import client
 import json
 import requests
